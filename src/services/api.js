@@ -15,6 +15,6 @@ export const createJoke = async (newJoke) => {
 };
 
 export const updateJoke = async (updatedJoke) => {
-  const response = await api.put(`/${updatedJoke.jokeId}`, updatedJoke);
+  const response = await api.put(`/${updatedJoke.id}`, updatedJoke);
   return response.data;
 };

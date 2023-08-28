@@ -3,14 +3,14 @@
     {
       "id": 1,
       "joke": "How do you comfort a JavaScript bug? You console it.",
-      "votes": 8,
-      "favorite": false
+      "votes": 12,
+      "favorite": true
     },
     {
       "id": 2,
       "joke": "Why did the React component go to the doctor? Because it couldn't setState.",
-      "votes": -5,
-      "favorite": false
+      "votes": 3,
+      "favorite": true
     },
     {
       "id": 3,
@@ -24,6 +24,12 @@
       "votes": 0,
       "favorite": false,
       "urgent": false
+    },
+    {
+      "joke": "addJokeMutation",
+      "votes": 9,
+      "favorite": true,
+      "id": 5
     }
   ]
 }

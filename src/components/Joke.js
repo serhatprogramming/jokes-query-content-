@@ -1,14 +1,23 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { updateJoke } from "../services/api";
+
 const Joke = ({ joke }) => {
+  const queryClient = useQueryClient();
+
+  const updateJokeMutation = useMutation(updateJoke, {
+    onSuccess: () => queryClient.invalidateQueries("jokes"),
+  });
+
   const handleUpvote = () => {
-    console.log("upvote", joke.id);
+    updateJokeMutation.mutate({ ...joke, votes: joke.votes + 1 });
   };
 
   const handleDownvote = () => {
-    console.log("downvote", joke.id);
+    updateJokeMutation.mutate({ ...joke, votes: joke.votes - 1 });
   };
 
   const handleToggleFavorite = () => {
-    console.log("toggle", joke.id);
+    updateJokeMutation.mutate({ ...joke, favorite: !joke.favorite });
   };
 
   return (
