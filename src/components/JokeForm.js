@@ -1,11 +1,20 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createJoke } from "../services/api";
+import { useContext } from "react";
+import NotificationContext from "../contexts/NotificationContext";
 
 const JokeForm = () => {
+  const { dispatch } = useContext(NotificationContext);
+
   const queryClient = useQueryClient();
 
   const addJokeMutation = useMutation(createJoke, {
-    onSuccess: () => {
+    onSuccess: (createdJoke) => {
+      dispatch({
+        type: "SET_NOTIFICATION",
+        message: `New joke "${createdJoke.joke}" added successfully!`,
+        notificationType: "info",
+      });
       queryClient.invalidateQueries("jokes");
     },
   });
@@ -13,7 +22,6 @@ const JokeForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const jokeText = event.target.joke.value;
-    console.log("joke text: ", jokeText);
     addJokeMutation.mutate({ joke: jokeText, votes: 0, favorite: false });
     event.target.joke.value = "";
   };

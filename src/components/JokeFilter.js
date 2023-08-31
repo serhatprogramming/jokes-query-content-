@@ -1,7 +1,12 @@
+import FilterContext from "../contexts/FilterContext";
+import { useContext } from "react";
+
 const JokeFilter = () => {
+  const { dispatch } = useContext(FilterContext);
+
   const onFilterChange = (event) => {
     const selectedValue = event.target.value;
-    console.log("filter: ", selectedValue);
+    dispatch({ type: "SET_FILTER", filter: selectedValue });
   };
 
   return (

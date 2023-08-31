@@ -3,33 +3,27 @@
     {
       "id": 1,
       "joke": "How do you comfort a JavaScript bug? You console it.",
-      "votes": 12,
-      "favorite": true
+      "votes": 20,
+      "favorite": false
     },
     {
       "id": 2,
       "joke": "Why did the React component go to the doctor? Because it couldn't setState.",
-      "votes": 3,
-      "favorite": true
+      "votes": 0,
+      "favorite": false
     },
     {
       "id": 3,
       "joke": "Programming is 10% writing code and 90% understanding why it's not working",
-      "votes": 0,
+      "votes": 3,
       "favorite": false
     },
     {
       "id": 4,
       "joke": "What did the database say to the website? Let me handle the queries",
-      "votes": 0,
+      "votes": 6,
       "favorite": false,
       "urgent": false
-    },
-    {
-      "joke": "addJokeMutation",
-      "votes": 9,
-      "favorite": true,
-      "id": 5
     }
   ]
 }
